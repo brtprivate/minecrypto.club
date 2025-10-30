@@ -51,6 +51,8 @@ const PerformanceOverview = ({ mlmData = {}, stakes = [], notRegistered, handleW
   const [loadingStakes, setLoadingStakes] = useState({}); // Track loading state per stake index
   const [error, setError] = useState(null); // Track errors for user feedback
   console.log("mlm", mlmData);
+  console.log("stakes prop in PerformanceOverview:", stakes);
+  console.log("stakes length:", stakes.length);
 
   const handleClaimClick = async (stakeIndex) => {
     setLoadingStakes((prev) => ({ ...prev, [stakeIndex]: true }));

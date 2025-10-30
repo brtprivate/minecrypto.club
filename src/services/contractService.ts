@@ -1293,7 +1293,6 @@ export const dwcContractInteractions: DWCContractInteractions = {
         totalInvestment,
         directBusiness,
         referrer,
-        referrerBonus,
         levelIncome,
         totalWithdrawn,
         isRegistered,
@@ -1304,12 +1303,15 @@ export const dwcContractInteractions: DWCContractInteractions = {
         functionName: "userRecord",
         args: [user],
         chainId: MAINNET_CHAIN_ID,
-      })) as [bigint, bigint, Address, bigint, bigint, bigint, boolean, bigint];
+      })) as [bigint, bigint, Address, bigint, bigint, boolean, bigint];
 
       if (totalInvestment === undefined || directBusiness === undefined) {
         // Example check; extend as needed
         throw new Error("Undefined fields in userRecord response");
       }
+
+      // Set referrerBonus to 0n as it's not in the contract
+      const referrerBonus = 0n;
 
       console.log(`User record for ${user}:`, {
         totalInvestment,

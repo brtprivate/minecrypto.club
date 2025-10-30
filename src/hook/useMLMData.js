@@ -174,9 +174,16 @@ const useMLMData = (wallet, chainId, switchChain, setError, setIsLoading) => {
       console.log("🔎 Checking user stake records...");
       console.log("User registered:", userRecord.isRegistered);
       console.log("User stake count:", userRecord.stakeCount);
+      console.log("User referrer:", userRecord.referrer);
+      console.log("Condition check:", {
+        isRegistered: userRecord.isRegistered,
+        referrerCheck: userRecord.referrer !== '0x0000000000000000000000000000000000000000',
+        stakeCountCheck: Number(userRecord.stakeCount) > 0,
+        fullCondition: (userRecord.isRegistered || userRecord.referrer !== '0x0000000000000000000000000000000000000000') && Number(userRecord.stakeCount) > 0
+      });
 
       console.log("userRecord", userRecord);
-      if (userRecord.referrer !== '0x0000000000000000000000000000000000000000' && Number(userRecord.stakeCount) > 0) {
+      if ((userRecord.isRegistered || userRecord.referrer !== '0x0000000000000000000000000000000000000000') && Number(userRecord.stakeCount) > 0) {
         for (let i = 0; i < Number(userRecord.stakeCount); i++) {
           console.log(`\n📌 Processing stake #${i}...`);
           try {
@@ -208,10 +215,10 @@ const useMLMData = (wallet, chainId, switchChain, setError, setIsLoading) => {
             const roiPercent = await dwcContractInteractions.getRoiPercent(
               BigInt(adjustedPackageIndex)
             );
-            if (!roiPercent) {
-              console.error(`No ROI percent for index ${adjustedPackageIndex}`);
-              continue;
-            }
+            // if (!roiPercent) {
+            //   console.error(`No ROI percent for index ${adjustedPackageIndex}`);
+            //   continue;
+            // }
             console.log("📈 ROI Percent:", roiPercent.toString());
 
             const claimable = await dwcContractInteractions.calculateClaimAble(
