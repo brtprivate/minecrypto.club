@@ -5,7 +5,7 @@ import {
   waitForTransactionReceipt,
 } from "@wagmi/core";
 import { config } from "../config/web3modal";
-import { bscTestnet } from "wagmi/chains";
+import { bsc } from "wagmi/chains";
 import { NETWORK_CONFIG } from "../config";
 import type { Address } from "viem";
 import { parseUnits, formatUnits, decodeErrorResult } from "viem";
@@ -20,10 +20,10 @@ export { USDC_ABI };
 // Contract configuration - BSC Mainnet
 // https://bscscan.com/address/0xff16221eadf66345a5c7113373e64e12e726b8f4#code
 export const DWC_CONTRACT_ADDRESS =
-  "0x39628A4fEDa949A7678aF92a83241F4218E93a05" as Address;
+  "0x1B96495f53f240fdCF11886214da696e52a0bd53" as Address;
 export const MAINNET_CHAIN_ID = NETWORK_CONFIG.chainId;
 
-export const ChainFun = bscTestnet;
+export const ChainFun = bsc;
 // Add getChainId function for compatibility
 export const getChainId = () => MAINNET_CHAIN_ID;
 
@@ -1430,7 +1430,9 @@ export const dwcContractInteractions: DWCContractInteractions = {
       return percent;
     } catch (error: any) {
       console.warn(
-        `contractPercent not available on ABI, defaulting to 0: ${error?.message || error}`
+        `contractPercent not available on ABI, defaulting to 0: ${
+          error?.message || error
+        }`
       );
       return 0n;
     }
@@ -1449,7 +1451,9 @@ export const dwcContractInteractions: DWCContractInteractions = {
       return income;
     } catch (error: any) {
       console.warn(
-        `directIncome not available on ABI, defaulting to 0: ${error?.message || error}`
+        `directIncome not available on ABI, defaulting to 0: ${
+          error?.message || error
+        }`
       );
       return 0n;
     }

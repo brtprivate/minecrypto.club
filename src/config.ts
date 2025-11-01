@@ -8,15 +8,15 @@ export const USD_STACK_CONTRACT_ADDRESS = '0x1cB6984E1A61416AEaf8Aa1787cbE116Ea1
 export const OWNER_ADDRESS = '0xAeFa34F289085fCcB37dCd7B4d408189C581DCE1';
 export const DEFAULT_REFERRAL_ADDRESS = OWNER_ADDRESS;
 
-// Chain ID for BSC Testnet
-export const CHAIN_ID = 97;
+// Chain ID for BSC Mainnet
+export const CHAIN_ID = 56;
 
-// Network configuration (BSC Testnet)
+// Network configuration (BSC Mainnet)
 export const NETWORK_CONFIG = {
-  name: 'BSC Testnet',
+  name: 'BNB Smart Chain',
   chainId: CHAIN_ID,
-  rpcUrl: 'https://bsc-testnet.publicnode.com',
-  explorerUrl: 'https://testnet.bscscan.com',
+  rpcUrl: 'https://bsc-dataseed1.binance.org',
+  explorerUrl: 'https://bscscan.com',
   nativeCurrency: {
     name: 'BNB',
     symbol: 'BNB',
