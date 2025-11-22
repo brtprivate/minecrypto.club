@@ -4,10 +4,10 @@ import { NETWORK_CONFIG } from '../config';
 
 const projectId = 'b0cebcda95846f0aabc833a9f05dca99';
 const metadata = {
-  name: 'minecrypto',
+  name: 'cryptopit',
   description: 'Platform',
-  url: 'https://minecrypto.club/',
-  icons: ['https://minecrypto.club/favicon.ico']
+  url: 'https://cryptopit.club/',
+  icons: ['https://cryptopit.club/favicon.ico']
 };
 
 const bscChain = {

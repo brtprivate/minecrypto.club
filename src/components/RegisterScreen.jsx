@@ -49,7 +49,7 @@ const RegisterScreen = ({ wallet, referralCode, setReferralCode, handleRegister,
                 textShadow: '0 2px 4px rgba(0,0,0,0.5)',
               }}
             >
-              Minecrypto
+              Cryptopit
             </Typography>
             <Typography
               variant="h5"
@@ -59,7 +59,7 @@ const RegisterScreen = ({ wallet, referralCode, setReferralCode, handleRegister,
                 fontSize: { xs: '1.2rem', sm: '1.5rem' },
               }}
             >
-              Register your Minecrypto Account
+              Register your Cryptopit Account
             </Typography>
           </Box>
 

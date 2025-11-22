@@ -74,7 +74,7 @@ const ConnectScreen = ({ onRegisterClick, onBackToHome }) => {
                 letterSpacing: '1px',
               }}
             >
-              Welcome to Minecrypto
+              Welcome to Cryptopit
             </Typography>
             <Typography
               variant="h6"
