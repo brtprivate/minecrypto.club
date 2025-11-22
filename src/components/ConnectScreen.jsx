@@ -56,7 +56,7 @@ const ConnectScreen = ({ onRegisterClick, onBackToHome }) => {
               src="/safemint-logo.png"
               alt="SafeMint Logo"
               sx={{
-                width: { xs: 120, sm: 150 },
+                width: { xs: 80, sm: 100 },
                 height: 'auto',
                 mb: 3,
                 filter: 'drop-shadow(0 4px 8px rgba(184, 146, 80, 0.4))',
